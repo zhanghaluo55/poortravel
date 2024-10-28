@@ -1,0 +1,66 @@
+var method = {
+  parseInt: function(value) {
+    return parseInt(value);
+  },
+  parseFloat: function(value) {
+    return parseFloat(value);
+  },
+  checkedLength: function(value) {
+    var arr = value.filter(function(item, index, array) {
+      return item.checked;
+    });
+    return arr.length;
+  },
+  canCreateCourseTimeTable: function(value) {
+    var arr = value.filter(function(item, index, array) {
+      return item.checked;
+    });
+    var boolean = arr.every(function(item, index, array) {
+      return item.date && item.time;
+    });
+    return arr.length && boolean;
+  },
+  courseYear: function(curYear, year) {
+    if (year > curYear) return (year + "年");
+  },
+  timeAdd: function(begin, duration) {
+    var arr = begin.split(":");
+    var end = parseFloat(arr[0]) + parseFloat(arr[1] / 60) + parseFloat(duration);
+    return method.twoFixed(parseInt(end)) + ":" + ((end - parseInt(end)) * 60 || '00');
+  },
+  turnWeek: function(val) {
+    switch (val) {
+      case 0:
+        return "日";
+      case 1:
+        return "一";
+      case 2:
+        return "二";
+      case 3:
+        return "三";
+      case 4:
+        return "四";
+      case 5:
+        return "五";
+      case 6:
+        return "六";
+    }
+  },
+  twoFixed: function(val) {
+    if (val.toString().length < 2) {
+      return "0" + val;
+    } else {
+      return val;
+    }
+  }
+}
+module.exports = {
+  parseInt: method.parseInt,
+  parseFloat: method.parseFloat,
+  checkedLength: method.checkedLength,
+  canCreateCourseTimeTable: method.canCreateCourseTimeTable,
+  courseYear: method.courseYear,
+  turnWeek: method.turnWeek,
+  twoFixed: method.twoFixed,
+  timeAdd: method.timeAdd
+}

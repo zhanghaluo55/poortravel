@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: poortravel-zipkin
+  boot:
+    admin:
+      client:
+        url: http://111.230.171.37:8084
+        instance:
+          service-url: http://111.230.171.37:9411
+          name: poortravel-zipkin
+  zipkin:
+    base-url: http://111.230.171.37:9411
+
+server:
+  port: 9411
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://111.230.171.37:8761/eureka/
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  metrics:
+    web:
+      server:
+        auto-time-requests: false

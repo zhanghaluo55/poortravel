@@ -1,0 +1,82 @@
+<!--index.wxml-->
+<view class="flex-column">
+  <view class="top-bar">
+    <navigator url="../position/position" class="address">{{province}}
+      <icon class="iconfont icon-down"></icon>
+    </navigator>
+    <view class="flex-column-main">
+      <component-search-bar></component-search-bar>
+    </view>
+  </view>
+  <scroll-view scroll-y class="flex-column-main">
+    <swiper indicator-dots="true" indicator-color="rgba(255,255,255,0.4)" indicator-active-color="#fff" autoplay="true" interval="4000" duration="500">
+      <block wx:for="{{swiperList}}" wx:key="*this">
+        <swiper-item bindtap='toDetails' data-province='{{province}}'>
+          <image src="{{item}}" class="slide-image" mode="scaleToFill" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="nav">
+    <view class="nav-item" bindtap='toDetails' data-province='西藏'>
+      <icon class="iconfont icon-jingdian5"></icon>西藏</view>     
+        <view class="nav-item" bindtap='toDetails' data-province='贵州'>
+          <icon class="iconfont icon-jingdian1"></icon>贵州</view>    
+      <view class="nav-item" bindtap='toDetails' data-province='陕西'>
+          <icon class="iconfont icon-scenery"></icon>陕西</view>  
+      <view class="nav-item" bindtap='toDetails' data-province='甘肃'>
+          <icon class="iconfont icon-jingdian3"></icon>甘肃</view>
+      <view class="nav-item" bindtap='toDetails' data-province='云南'>
+          <icon class="iconfont icon-jingdian6"></icon>云南</view>
+       </view>
+    <view class="title">
+      <icon class="iconfont icon-icon_send"></icon>逛一逛</view>
+    <view class="find">
+      <navigator open-type="switchTab" url="../stategy/stategy">景区攻略</navigator>
+      <navigator open-type="switchTab" url="../blogs/blogs">热门游记</navigator>
+    </view>
+    <view class="title">
+      <icon class="iconfont icon-gerenxinxi1"></icon>扶贫资讯</view>
+  <view class='news'>
+    <navigator url='../news/news'>
+    <view class='news-item' >
+      <view class='news-item-aside'>
+        <image lazy-load='true' mode='aspectFill' class='news-item-pic' alt="暂无预览图" src='http://111.230.171.37:8888/group1/M00/00/01/rBAADl6HXhiAHberAALpSKeA_sQ985.jpg'></image>
+      </view>
+      <view class='news-item-main'>
+        <view class='news-item-title'>全国扶贫办主任电视电话会议强调
+坚定必胜信心 坚决完成脱贫攻坚任务</view>
+        <view class='news-item-time'>2020-02-26</view>
+        <view class='news-item-src'>国务院扶贫办</view>
+        <view class='news-item-category'></view>
+      </view>
+    </view>
+    </navigator>
+     <navigator url='../news/news'>
+    <view class='news-item' >
+      <view class='news-item-aside'>
+        <image lazy-load='true' mode='aspectFill' class='news-item-pic' alt="暂无预览图" src='http://111.230.171.37:8888/group1/M00/00/01/rBAADl6HX4eAVVHuAAZcNLxkvKg192.jpg'></image>
+      </view>
+      <view class='news-item-main'>
+        <view class='news-item-title'>国新办举行决战决胜脱贫攻坚新闻发布会</view>
+        <view class='news-item-time'>2020-03-12</view>
+        <view class='news-item-src'>国务院新闻办公室</view>
+        <view class='news-item-category'></view>
+      </view>
+    </view>
+    </navigator>
+     <navigator url='../news/news'>
+    <view class='news-item' >
+      <view class='news-item-aside'>
+        <image lazy-load='true' mode='aspectFill' class='news-item-pic' alt="暂无预览图" src='	http://111.230.171.37:8888/group1/M00/00/01/rBAADl6HXhCAegmGAAbVF19Kuwo818.jpg'></image>
+      </view>
+      <view class='news-item-main'>
+        <view class='news-item-title'>延安脱贫了</view>
+        <view class='news-item-time'>2019-07-09</view>
+        <view class='news-item-src'>王尚武</view>
+        <view class='news-item-category'></view>
+      </view>
+    </view>
+    </navigator>
+  </view>
+  </scroll-view>
+</view>

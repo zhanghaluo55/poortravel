@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hongpro.poortravel.common.mapper.PostMapper">
+  <resultMap id="BaseResultMap" type="com.hongpro.poortravel.common.domain.Post">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="post_image" jdbcType="VARCHAR" property="postImage" />
+    <result column="post_date" jdbcType="TIMESTAMP" property="postDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="likes" jdbcType="INTEGER" property="likes" />
+    <result column="share_num" jdbcType="INTEGER" property="shareNum" />
+    <result column="comment_num" jdbcType="INTEGER" property="commentNum" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+</mapper>

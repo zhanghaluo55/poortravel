@@ -1,0 +1,5 @@
+{
+      "usingComponents": {
+        "i-tag": "../../assert/dist/tag/index"
+      }
+}

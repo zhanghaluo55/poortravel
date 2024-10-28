@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/poortravel-admin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-common" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-common-domain" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-common-service" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-common-web" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-config" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-dependencies" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-eureka" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-service-admin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-service-attraction" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-service-base" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-service-posts" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-service-redis" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-service-sso" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-service-upload" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-web-admin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-web-bamui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-zipkin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/poortravel-zuul" vcs="Git" />
+  </component>
+</project>

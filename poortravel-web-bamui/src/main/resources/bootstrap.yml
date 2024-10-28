@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8889
+      name: poortravel-web-bamui, poortravel-common-web, poortravel-common-hosts, poortravel-client-redis
+      label: master
+      profile: dev

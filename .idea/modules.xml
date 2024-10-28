@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/poortravel-admin/poortravel-admin.iml" filepath="$PROJECT_DIR$/poortravel-admin/poortravel-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poortravel-common-service/poortravel-common-service.iml" filepath="$PROJECT_DIR$/poortravel-common-service/poortravel-common-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poortravel-common-web/poortravel-common-web.iml" filepath="$PROJECT_DIR$/poortravel-common-web/poortravel-common-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poortravel-config/poortravel-config.iml" filepath="$PROJECT_DIR$/poortravel-config/poortravel-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poortravel-eureka/poortravel-eureka.iml" filepath="$PROJECT_DIR$/poortravel-eureka/poortravel-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poortravel-service-admin/poortravel-service-admin.iml" filepath="$PROJECT_DIR$/poortravel-service-admin/poortravel-service-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poortravel-service-attraction/poortravel-service-attraction.iml" filepath="$PROJECT_DIR$/poortravel-service-attraction/poortravel-service-attraction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poortravel-service-base/poortravel-service-base.iml" filepath="$PROJECT_DIR$/poortravel-service-base/poortravel-service-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poortravel-service-posts/poortravel-service-posts.iml" filepath="$PROJECT_DIR$/poortravel-service-posts/poortravel-service-posts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poortravel-service-redis/poortravel-service-redis.iml" filepath="$PROJECT_DIR$/poortravel-service-redis/poortravel-service-redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poortravel-service-sso/poortravel-service-sso.iml" filepath="$PROJECT_DIR$/poortravel-service-sso/poortravel-service-sso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poortravel-service-upload/poortravel-service-upload.iml" filepath="$PROJECT_DIR$/poortravel-service-upload/poortravel-service-upload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poortravel-web-admin/poortravel-web-admin.iml" filepath="$PROJECT_DIR$/poortravel-web-admin/poortravel-web-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poortravel-web-bamui/poortravel-web-bamui.iml" filepath="$PROJECT_DIR$/poortravel-web-bamui/poortravel-web-bamui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poortravel-zipkin/poortravel-zipkin.iml" filepath="$PROJECT_DIR$/poortravel-zipkin/poortravel-zipkin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poortravel-zuul/poortravel-zuul.iml" filepath="$PROJECT_DIR$/poortravel-zuul/poortravel-zuul.iml" />
+    </modules>
+  </component>
+</project>

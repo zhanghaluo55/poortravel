@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class='deposit-page'>
+  <view class='title-box'>
+    <text></text>
+  </view>
+  <form bind:submit="formSubmit" bind:reset="formReset">
+  <view class='apply-info-box'>
+    <view class='info-item item-username'>
+      <text class='label'>密码:</text>
+      <input name="password" name="password" placeholder="请输入密码" password="{{true}}"/>
+    </view>
+     <view class='info-item item-username'>
+      <text class='label'>重复密码:</text>
+      <input placeholder="请输入重复密码" password="{{true}}"/>
+    </view>
+    <button form-type="submit">修改</button>
+  </view>
+  </form>
+</view>

@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: poortravel-web-bamui
+  boot:
+    admin:
+      client:
+        url: http://111.230.171.37:8084
+        instance:
+          service-url: http://47.103.198.196:8603
+          name: poortravel-web-bamui
+server:
+  port: 8603

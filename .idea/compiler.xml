@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="poortravel-eureka" />
+        <module name="poortravel-service-sso" />
+        <module name="poortravel-web-admin" />
+        <module name="poortravel-service-upload" />
+        <module name="poortravel-web-bamui" />
+        <module name="poortravel-admin" />
+        <module name="poortravel-common-domain" />
+        <module name="poortravel-service-attraction" />
+        <module name="poortravel-service-base" />
+        <module name="poortravel-common" />
+        <module name="poortravel-zuul" />
+        <module name="poortravel-zipkin" />
+        <module name="poortravel-service-posts" />
+        <module name="poortravel-config" />
+        <module name="poortravel-common-web" />
+        <module name="poortravel-service-redis" />
+        <module name="poortravel-common-service" />
+        <module name="poortravel-service-admin" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="poortravel-web-applet" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="poortravel-admin" options="-parameters" />
+      <module name="poortravel-common" options="-parameters" />
+      <module name="poortravel-common-domain" options="-parameters" />
+      <module name="poortravel-common-service" options="-parameters" />
+      <module name="poortravel-common-web" options="-parameters" />
+      <module name="poortravel-config" options="-parameters" />
+      <module name="poortravel-dependencies" options="-parameters" />
+      <module name="poortravel-eureka" options="-parameters" />
+      <module name="poortravel-service-admin" options="-parameters" />
+      <module name="poortravel-service-attraction" options="-parameters" />
+      <module name="poortravel-service-base" options="-parameters" />
+      <module name="poortravel-service-posts" options="-parameters" />
+      <module name="poortravel-service-redis" options="-parameters" />
+      <module name="poortravel-service-sso" options="-parameters" />
+      <module name="poortravel-service-upload" options="-parameters" />
+      <module name="poortravel-web-admin" options="-parameters" />
+      <module name="poortravel-web-bamui" options="-parameters" />
+      <module name="poortravel-zipkin" options="-parameters" />
+      <module name="poortravel-zuul" options="-parameters" />
+    </option>
+  </component>
+</project>

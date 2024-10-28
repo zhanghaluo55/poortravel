@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>H+ 后台主题UI框架 - Bootstrap Table</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="http://111.230.171.37:81/poortravel/assert/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="http://111.230.171.37:81/poortravel/assert/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="http://111.230.171.37:81/poortravel/assert/css/plugins/bootstrap-table/bootstrap-table.min.css">
+    <link href="http://111.230.171.37:81/poortravel/assert/css/animate.css" rel="stylesheet">
+    <link href="http://111.230.171.37:81/poortravel/assert/css/style.css?v=4.1.0" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://111.230.171.37:81/poortravel/assert/plugins/dropzone/dropzone.css"/>
+    <link rel="stylesheet" href="http://111.230.171.37:81/poortravel/assert/plugins/dropzone/min/basic.min.css"/>
+    <link rel="stylesheet"
+          href="http://111.230.171.37:81/poortravel/assert/plugins/wangEditor/release/wangEditor.min.css"/>
+
+    <!--video js-->
+    <link href="http://vjs.zencdn.net/5.0.2/video-js.css" rel="stylesheet">
+    <script src="http://vjs.zencdn.net/ie8/1.1.0/videojs-ie8.min.js"></script>
+    <script src="http://vjs.zencdn.net/5.0.2/video.js"></script>
+
+    <script href="http://111.230.171.37:81/poortravel/assert/js/jquery-3.3.1.min.js"></script>
+<style>
+    .wrap1{
+        width: 60px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+</style>
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox float-e-margins">
+
+        <div class="col-sm-12">
+            <!-- Example Pagination -->
+            <div class="example-wrap">
+                <div class="form-inline row">
+
+                    <div class="col-sm-3 col-md-offset-5 input-group">
+                        <input type="text" placeholder="输入搜索内容" id="search_input"  name="search" class="form-control input-lg">
+                        <div class="input-group-btn">
+                            <button onclick="search()" class="btn btn-lg btn-primary" type="submit">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>搜索
+                            </button>
+                        </div>
+                    </div>
+                    <script>
+                        function search() {
+                            window.location.href="/v1/attractions/search?key="+$("#search_input").val();
+                        }
+                    </script>
+                    <a data-toggle="modal" class="btn btn-primary" href="#modal-form">添加攻略</a>
+                    <button type="button" class="btn btn-primary">删除攻略</button>
+                    <br>
+                    <a data-toggle="modal" class="btn btn-primary" href="/v1/attractionfiles/getall">查看攻略文件绑定</a>
+                    <a data-toggle="modal" class="btn btn-primary" href="/v1/attractiontags/getall">查看攻略标签绑定</a>
+                    <h4 class="example-title">攻略列表</h4>
+                    <div class="example">
+                    </div>
+                    <table id="exampleTablePagination" class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th data-field="state" data-checkbox="true"></th>
+                            <th>序号</th>
+                            <th>攻略名称</th>
+                            <th>简介</th>
+                            <th>地址</th>
+                            <th>纬度</th>
+                            <th>经度</th>
+                            <th>省份</th>
+                            <th>交通</th>
+                            <th>门票</th>
+                            <th>开放时间</th>
+                            <th>联系方式</th>
+                            <th>封面</th>
+                            <th>点赞数</th>
+                            <th>评分</th>
+                            <th>收藏</th>
+                            <th>状态</th>
+                            <th>编辑</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="attraction:${baseResult.data}">
+                            <td></td>
+                            <td th:text="${attraction.id}"></td>
+                            <td th:text="${attraction.title}"></td>
+                            <td><div class="wrap1">[[${attraction.description}]]</div></td>
+                            <td><div class="wrap1">[[${attraction.address}]]</div></td>
+                            <td th:text="${attraction.latitude}"></td>
+                            <td th:text="${attraction.longitude}"></td>
+                            <td th:text="${attraction.route}"></td>
+                            <td><div class="wrap1">[[${attraction.traffic}]]</div></td>
+                            <td><div class="wrap1">[[${attraction.ticket}]]</div></td>
+                            <td><div class="wrap1">[[${attraction.operatHours}]]</div></td>
+                            <td><div class="wrap1">[[${attraction.contactPhone}]]</div></td>
+                            <td><img style="width: 200px;height: 150px;" th:src="@{${attraction.viewImage}}"/></td>
+                            <td th:text="${attraction.likes}"></td>
+                            <td th:text="${attraction.grade}"></td>
+                            <td th:text="${attraction.collect}"></td>
+                            <td th:text="${attraction.status}"></td>
+                            <td>
+                                <a data-toggle="modal" href="#modal-form2"
+                                   th:onclick="'javascript:toEdit('+${attraction.id}+');'">编辑</a>&nbsp;&nbsp;
+                                <a th:onclick="'javascript:delete_attraction('+${attraction.id}+');'"
+                                   id="delete_btn">删除</a>
+                                <form method="post" id="deleteAttraction">
+                                    <input type="hidden" name="_method" value="delete"/>
+                                </form>
+                                <script>
+                                    function delete_attraction(id) {
+
+                                        var a = $("#delete_btn").attr("delete_uri");
+
+                                        $("#deleteAttraction").attr("action", "/v1/attractions/" + id).submit();
+                                        return false;
+                                    }
+
+                                </script>
+                            </td>
+                        </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+            <!-- End Example Pagination -->
+        </div>
+    </div>
+    <!-- End Panel Other -->
+</div>
+
+
+<!--添加模态框-->
+<div id="modal-form" class="modal fade" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h3 class="m-t-none m-b">添加视频</h3>
+
+                        <p>请输入攻略信息(⊙o⊙)</p>
+
+                        <form role="form" th:action="@{/v1/attractions}" method="post">
+                            <div class="form-group">
+                                <label>标题：</label>
+                                <input name="title" type="text" placeholder="请输入标题" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>简介：</label>
+                                <textarea name="description" rows="3" type="text" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>地址：</label>
+                                <input name="address" type="text" placeholder="地址" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>纬度：</label>
+                                <input name="latitude" type="text" placeholder="纬度" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>经度：</label>
+                                <input name="longitude" type="text" placeholder="经度" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>开放时间：</label>
+                                <input name="operatHours" type="text" placeholder="开放时间" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>所在省份：</label>
+                                <input name="route" type="text" placeholder="填入省份(如广东等)" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>门票：</label>
+                                <input name="ticket" type="text" placeholder="门票" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>联系方式：</label>
+                                <input name="contactPhone" type="text" placeholder="联系方式" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>评分：</label>
+                                <input name="grade" type="text" placeholder="评分" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>交通方式：</label>
+                                <input name="traffic" type="text" placeholder="交通方式" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">封面</label>
+                                <div class="col-sm-10">
+                                    <input id="thumbImage" name="viewImage" class="form-control" placeholder="封面"/>
+                                    <div class="dropzone dropzone-file-area" id="myDropzone">
+                                        <div class="am-text-success dz-message">
+                                            将文件拖拽到此处<br>或点此打开文件管理器选择文件
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit">
+                                    <strong>保存</strong>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--修改模态框-->
+<div id="modal-form2" class="modal fade" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h3 class="m-t-none m-b">编辑攻略</h3>
+
+                        <p>请修改攻略信息(⊙o⊙)</p>
+
+                        <form id="editForm" role="form" th:action="@{/v1/attractions}" method="post">
+                            <input type="hidden" name="_method" value="put"/>
+                            <!-- <input type="hidden" name="id" th:value="${user.id}">-->
+                            <div class="form-group">
+                                <label>序号：</label>
+                                <input id="id_update_input" readonly="readonly" name="id" type="text"
+                                       class="form-control" val="">
+                            </div>
+                            <div class="form-group">
+                                <label>标题：</label>
+                                <input id="title_update_input" name="title" type="text"
+                                       class="form-control" val="">
+                            </div>
+                            <div class="form-group">
+                                <label>简介：</label>
+                                <textarea id="description_update_input" name="description" rows="3" type="text"
+                                          class="form-control" val=""></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>地址：</label>
+                                <input id="address_update_input" val="" name="address" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>纬度：</label>
+                                <input id="latitude_update_input" val="" name="latitude" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>经度：</label>
+                                <input id="longitude_update_input" val="" name="longitude" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>开放时间：</label>
+                                <input id="operatHours_update_input" val="" name="operatHours" type="text"
+                                       class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>所在省份：</label>
+                                <input id="route_update_input" val="" name="route" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>门票：</label>
+                                <input id="ticket_update_input" val="" name="ticket" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>联系方式：</label>
+                                <input id="contactPhone_update_input" val="" name="contactPhone" type="text"
+                                       class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>评分：</label>
+                                <input id="grade_update_input" val="" name="grade" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>点赞数：</label>
+                                <input id="likes_update_input" val="" name="likes" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>收藏数：</label>
+                                <input id="collect_update_input" val="" name="collect" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>交通方式：</label>
+                                <input id="traffic_update_input" val="" name="traffic" type="text" class="form-control">
+                            </div>
+                            <!--<div class="form-group">
+                                <label>状态（1：待审核；2：审核通过；3：封禁）</label>
+                                <div>
+                                    <select class="form-control m-b" name="status">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+                            </div>-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">封面</label>
+                                <div class="col-sm-10">
+                                    <input id="thumbImage2" name="viewImage" class="form-control" placeholder="封面"/>
+                                    <div class="dropzone dropzone-file-area" id="myDropzone2">
+                                        <div class="am-text-success dz-message">
+                                            将文件拖拽到此处<br>或点此打开文件管理器选择文件
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button id="edit_btn" class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit">
+                                    <strong>完成</strong>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function toEdit(id) {
+        $.ajax({
+            url: "/v1/attractions/" + id,
+            type: "GET",
+            dataType: 'json',
+            success: function (result) {
+                var attraction = result.data;
+                $("#id_update_input").val(id);
+                $("#title_update_input").val(attraction.title);
+                $("#description_update_input").val(attraction.description);
+                $("#address_update_input").val(attraction.address);
+                $("#latitude_update_input").val(attraction.latitude);
+                $("#longitude_update_input").val(attraction.longitude);
+                $("#route_update_input").val(attraction.route);
+                $("#traffic_update_input").val(attraction.traffic);
+                $("#ticket_update_input").val(attraction.ticket);
+                $("#operatHours_update_input").val(attraction.operatHours);
+                $("#contactPhone_update_input").val(attraction.contactPhone);
+                $("#thumbImage2").val(attraction.viewImage);
+                $("#likes_update_input").val(attraction.likes);
+                $("#grade_update_input").val(attraction.grade);
+                $("#collect_update_input").val(attraction.collect);
+                $("#editForm").attr("action", "/v1/attractions/" + id);
+            }
+        })
+    }
+
+</script>
+<!-- 全局js -->
+<script src="http://111.230.171.37:81/poortravel/assert/js/jquery.min.js?v=2.1.4"></script>
+<script src="http://111.230.171.37:81/poortravel/assert/js/bootstrap.min.js?v=3.3.6"></script>
+
+<!-- 自定义js -->
+<script src="http://111.230.171.37:81/poortravel/assert/js/content.js?v=1.0.0"></script>
+
+<script src="http://111.230.171.37:81/poortravel/assert/js/jquery-3.3.1.min.js"></script>
+<script src="http://111.230.171.37:81/poortravel/assert/plugins/dropzone/min/dropzone.min.js"></script>
+<script src="http://111.230.171.37:81/poortravel/assert/plugins/wangEditor/release/wangEditor.min.js"></script>
+
+<!-- Bootstrap table -->
+<script src="http://111.230.171.37:81/poortravel/assert/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="http://111.230.171.37:81/poortravel/assert/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="http://111.230.171.37:81/poortravel/assert/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+<!-- iCheck -->
+<script src="http://111.230.171.37:81/poortravel/assert/js/plugins/iCheck/icheck.min.js"></script>
+
+<!-- Peity -->
+<script src="http://111.230.171.37:81/poortravel/assert/js/demo/bootstrap-table-demo.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+<!--统计代码，可删除-->
+
+<script type="text/javascript">
+
+    Dropzone.options.myDropzone = {
+        url: "https://www.zzhcool.top/upload/service/upload",
+        paramName: "file",
+        init: function () {
+            this.on("success", function (file, data) {
+                $("#thumbImage").val(data.fileName);
+            });
+        }
+    };
+
+    Dropzone.options.myDropzone2 = {
+        url: "https://www.zzhcool.top/upload/service/upload",
+        paramName: "file",
+        init: function () {
+            this.on("success", function (file, data) {
+                $("#thumbImage2").val(data.fileName);
+            });
+        }
+    };
+</script>
+</body>
+
+</html>

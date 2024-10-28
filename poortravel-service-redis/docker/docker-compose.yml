@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  poortravel-service-redis:
+    restart: always
+    image: 47.101.152.189:5000/poortravel-service-redis
+    container_name: poortravel-service-redis
+    ports:
+      - 8502:8502
+    networks:
+      - service_redis_network
+networks:
+  service_redis_network:

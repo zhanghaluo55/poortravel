@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "发布游记",
+  "usingComponents": {
+    "pop": "../common/chooseImage/index",
+    "popnum": "../common/chooseImage/index"
+  }
+}

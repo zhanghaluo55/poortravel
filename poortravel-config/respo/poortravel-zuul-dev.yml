@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: poortravel-zuul
+  boot:
+    admin:
+      client:
+        url: http://localhost:8084
+        instance:
+          service-url: http://localhost:8769
+          name: poortravel-zuul
+  zipkin:
+    base-url: http://localhost:9411
+
+server:
+  port: 8769
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info

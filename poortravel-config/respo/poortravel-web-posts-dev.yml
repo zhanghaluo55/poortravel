@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: poortravel-web-posts
+
+server:
+  port: 8602

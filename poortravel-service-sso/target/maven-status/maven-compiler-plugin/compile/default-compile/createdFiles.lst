@@ -1,0 +1,7 @@
+com\hongpro\poortravel\service\sso\mapper\UserExtentMapper.class
+com\hongpro\poortravel\service\sso\ServiceSSOApplication.class
+com\hongpro\poortravel\service\sso\service\consumer\RedisService.class
+com\hongpro\poortravel\service\sso\controller\LoginController.class
+com\hongpro\poortravel\service\sso\service\LoginService.class
+com\hongpro\poortravel\service\sso\service\consumer\fallback\RedisServiceFallback.class
+com\hongpro\poortravel\service\sso\service\impl\LoginServiceImpl.class

@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  poortravel-eureka:
+    restart: always
+    image: 47.101.152.189:5000/poortravel-eureka
+    container_name: poortravel-eureka
+    ports:
+      - 8761:8761
+    networks:
+      - eureka_network
+networks:
+  eureka_network:

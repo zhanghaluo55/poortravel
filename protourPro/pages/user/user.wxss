@@ -1,0 +1,120 @@
+/* pages/user/user.wxss */
+
+.br {
+  position: relative;
+}
+
+.br::after {
+  content: "";
+  position: absolute;
+  border-right: 1rpx solid #666;
+  right: 0;
+  top: 10rpx;
+  bottom: 6rpx;
+}
+
+.bb::after {
+  content: "";
+  display: block;
+  border-bottom: 1rpx solid #666;
+}
+
+.header {
+  background: #3CB371;
+  display: flex;
+  padding: 20rpx 40rpx;
+  position: relative;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.user-info {
+  padding-left: 20rpx;
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 50rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.member {
+  background: #fc0;
+  position: absolute;
+  right: 0;
+  top: 50rpx;
+  font-size: 26rpx;
+  border-radius: 30rpx 0 0 30rpx;
+  padding: 6rpx 10rpx;
+}
+
+.member icon {
+  color: #000;
+  vertical-align: -4rpx;
+  margin-top: -8rpx;
+  font-size: 40rpx;
+  margin-right: 6rpx;
+}
+
+.top-list {
+  display: flex;
+  text-align: center;
+  font-size: 28rpx;
+  flex-wrap: wrap;
+  padding: 30rpx 0 40rpx;
+}
+
+.top-list .item {
+  flex: auto;
+}
+
+.top-list icon {
+  display: inline;
+  color: #666;
+  font-size: 40rpx;
+}
+
+.top-list text {
+  display: block;
+  line-height: 1;
+  margin-top: 16rpx;
+}
+
+.separator {
+  background: #ccc;
+  height: 20rpx;
+  margin-bottom: 10rpx;
+}
+
+.type-list {
+  padding: 0 40rpx;
+  font-size: 28rpx;
+}
+
+.title {
+  padding: 24rpx 0 20rpx;
+}
+
+.con {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  padding-bottom: 30rpx;
+}
+
+.item {
+  padding: 0 20rpx;
+}
+
+.item icon {
+  font-size: 46rpx;
+  color: #666;
+}
+
+.item text {
+  display: block;
+  margin-top: 10rpx;
+}

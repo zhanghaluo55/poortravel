@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8889
+      name: poortravel-service-sso, poortravel-common-service, poortravel-client-redis
+      label: master
+      profile: dev

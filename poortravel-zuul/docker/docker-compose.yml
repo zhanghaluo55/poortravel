@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  poortravel-zuul:
+    restart: always
+    image: 47.101.152.189:5000/poortravel-zuul
+    container_name: poortravel-zuul
+    ports:
+      - 8769:8769
+    networks:
+      - zuul_network
+networks:
+  zuul_network:

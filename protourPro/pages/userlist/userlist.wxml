@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class='deposit-page'>
+  <view class='title-box'>
+    <text>你的信息</text>
+  </view>
+  <form bind:submit="formSubmit" bind:reset="formReset">
+  <view class='apply-info-box'>
+    <view class='info-item item-username'>
+      <text class='label'>用户名:</text>
+      <input name="username" value='{{user.username}}'/>
+    </view>
+     <view class='info-item item-username'>
+      <text class='label'>昵称:</text>
+      <input name="nickname"  value='{{user.nickname}}'/>
+    </view>
+    <view class='info-item item-phone'>
+      <text class='label'>联系电话:</text>
+      <input name="airphone"  value='{{user.airphone}}'/>
+    </view>
+    <view class='info-item item-email'>
+      <text class='label'>电子邮箱:</text>
+      <input name="email"  value='{{user.email}}'/>
+    </view>
+    <view class='info-item item-phone'>
+      <text class='label'>性别:</text>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio">
+            <radio name="gender" value="1" checked="true"/>男
+            <radio name="gender" value="2"/>女
+        </label>
+      </radio-group>
+    </view>
+     <view class='info-item item-email'>
+      <text class='label'>地址:</text>
+      <input name="address"  value='{{user.address}}'/>
+    </view>
+    <button form-type="submit" >修改</button>
+  </view>
+  </form>
+</view>

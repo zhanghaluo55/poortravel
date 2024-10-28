@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  poortravel-service-sso:
+    restart: always
+    image: 47.101.152.189:5000/poortravel-service-sso
+    container_name: poortravel-service-sso
+    ports:
+      - 8503:8503
+    networks:
+      - service_sso_network
+networks:
+  service_sso_network:

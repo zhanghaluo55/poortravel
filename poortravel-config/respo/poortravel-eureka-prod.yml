@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: poortravel-eureka
+  boot:
+    admin:
+      client:
+        url: http://111.230.171.37:8084
+        instance:
+          service-url: http://111.230.171.37:8761
+          name: poortravel-eureka
+  zipkin:
+    base-url: http://111.230.171.37:9411
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: 111.230.171.37
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://111.230.171.37:8761/eureka/
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hongpro.poortravel.common.mapper.NewsMapper">
+    <resultMap id="BaseResultMap" type="com.hongpro.poortravel.common.domain.News">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="title" jdbcType="VARCHAR" property="title"/>
+        <result column="writer" jdbcType="VARCHAR" property="writer"/>
+        <result column="news_image" jdbcType="VARCHAR" property="newsImage"/>
+        <result column="news_date" jdbcType="TIMESTAMP" property="newsDate"/>
+        <result column="content" jdbcType="LONGVARCHAR" property="content"/>
+    </resultMap>
+</mapper>

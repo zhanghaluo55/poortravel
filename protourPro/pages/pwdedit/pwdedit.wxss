@@ -1,0 +1,65 @@
+.deposit-page {
+  width: 690rpx;
+  margin: 0 auto;
+  font-family: PingFangSC-Medium;
+}
+.title-box {
+  height: 150rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1rpx solid #E4E5EA;
+}
+.title-box text {
+  font-size: 28rpx;
+  color: #3F454B;
+  text-align: justify;
+}
+.title-phone {
+  font-size: 28rpx;
+  color: #3F454B;
+  text-align: justify;
+}
+.title-phone text {
+  color: blue;
+  text-decoration: underline;
+}
+.title {
+  font-size: 32rpx;
+  color: #1D2023;
+  margin: 40rpx 0 20rpx;
+}
+.info-item {
+  height: 110rpx;
+  width: 100%;
+  display: flex;
+  border-bottom: 1rpx solid #E4E5EA;
+  align-items: center;
+}
+.label {
+  font-size: 32rpx;
+  color: #3F454B;
+  width: 160rpx;
+}
+.info-item input {
+  font-size: 32rpx;
+  flex: 1;
+}
+.right-arrow {
+  width: 40rpx;
+  height: 60rpx;
+}
+.right-arrow:after {
+  display: inline-block;
+	content: '';
+	height: 20rpx;
+	width: 20rpx;
+	border-width: 1rpx 1rpx 0 0;
+	border-color: #cccccc;
+	border-style: solid;
+	transform: rotate(45deg);
+}
+.sub-title {
+  font-size: 24rpx;
+  color: #9399A5;
+}

@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  poortravel-web-bamui:
+    restart: always
+    image: 47.101.152.189:5000/poortravel-web-bamui
+    container_name: poortravel-web-bamui
+    ports:
+      - 8603:8603
+    networks:
+      - web_bamui_network
+networks:
+  web_bamui_network:

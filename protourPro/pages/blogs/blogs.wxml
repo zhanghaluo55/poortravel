@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view>
+  <view wx:for='{{posts.data}}' wx:key='list' wx:for-item="item">
+  <view class= "card" bindtap="toDetails" data-src="{{item.id}}">
+      <image class= "image" mode="aspectFill" src="{{item.postImage}}"/>
+      <view class="title">{{item.title}}</view>
+      <view class="tip">{{item.shareNum}}浏览 · {{item.commentNum}}收藏 · {{item.likes}}分享</view>
+  </view>
+  </view>
+</view>
+

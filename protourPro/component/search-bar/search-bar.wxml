@@ -1,0 +1,5 @@
+<!--pages/component/search-bar.wxml-->
+<view class="search">
+  <icon type="search" size="15" />
+  <input placeholder="请输入目的地" confirm-type="search" bindconfirm="search"/>
+</view>

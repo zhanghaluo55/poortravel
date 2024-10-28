@@ -1,0 +1,251 @@
+.detail {
+  font-family: PingFangSC-Regular;
+  padding: 0 40rpx 120rpx;
+}
+.banner-box {
+  width: 100%;
+  height: 504rpx;
+  position: relative;
+}
+.banner-box-swiper {
+  height: 504rpx;
+  width: 670rpx;
+  margin: 20rpx auto;
+}
+.banner-indicator-info {
+  position:absolute;
+width:80rpx;
+height:39rpx;
+background:rgba(0, 0, 0, 0.35);
+bottom:20rpx;
+right:30rpx;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:20rpx;
+left:50%;
+margin-left:-40rpx;
+
+}
+.banner-indicator-text {
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.banner-indicator-text-small {
+  font-size: 20rpx;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+.banner-img,
+.banner-small-img {
+  width: 100%;
+  height: 100%;
+}
+.house-title{
+  margin-top:20rpx;
+}
+.house-title .label image {
+  height: 28rpx;
+  display: inline-block;
+}
+.house-title .title1 {
+  font-size: 40rpx;
+}
+.house-title .money {
+  color: #fc3d4c;
+  margin-top:10rpx;
+margin-bottom:20rpx;
+
+}
+.house-title text {
+  font-size: 24rpx;
+}
+.house-detail {
+  border-top: 1px solid #e4e5ea;
+  border-bottom: 1px solid #e4e5ea;
+  padding: 30rpx 0;
+}
+.house-detail-row {
+  display: flex;
+}
+.house-detail-item {
+  flex: 1;
+  display: flex;
+  margin: 10rpx 0;
+  font-size:28rpx;
+}
+.label{
+  margin-bottom:30rpx;
+}
+.type {
+  color: #9399a5;
+  margin-right: 20rpx;
+  font-size:28rpx;
+}
+.connect-detail {
+  padding: 32rpx 0 40rpx;
+}
+.connect-detail-row {
+  display: flex;
+  margin: 8rpx 0;
+}
+.connect-detail-row view {
+  justify-content:space-around;
+
+
+}
+.connect-detail-row .type{
+display:flex;
+align-items:center;
+}
+.connect-detail-row .item-content {
+  flex: 1;
+  text-align: end;
+  font-size:32rpx;
+}
+
+.device-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.device-item {
+  height: 130rpx;
+  width: 130rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.device-item image {
+  width: 64rpx;
+  height: 64rpx;
+}
+.device-item text {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #606972;
+  letter-spacing: 0.41rpx;
+  text-align: center;
+}
+.title {
+  font-family: PingFangSC-Medium;
+  font-size: 40rpx;
+  color: #3f454b;
+  letter-spacing: 1.25rpx;
+  text-align: justify;
+  display: inline-block;
+  margin-bottom:20rpx;
+}
+.house-text{
+  margin-top: 40rpx;
+}
+.house-text-content {
+  font-size: 28rpx;
+  color: #606972;
+  letter-spacing: 0;
+  text-align: justify;
+  line-height: 42rpx;
+}
+.bottom-box {
+  height: 120rpx;
+  width: 100%;
+  background: #ffffff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #e4e5ea;
+  display: flex;
+  align-items: center;
+  padding: 0 40rpx;
+}
+.item-like,
+.item-share {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.item-like image,
+.item-share image {
+  width: 38rpx;
+  height: 36rpx;
+}
+.item-like text,
+.item-share text {
+  font-size: 24rpx;
+  color: #9399a5;
+  letter-spacing: 0;
+  text-align: center;
+}
+.item-share {
+  margin-left: 40rpx;
+}
+.item-online-service,
+.item-appointment {
+  width: 234rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #ffba15;
+  border-radius: 8rpx;
+  color: #ffffff;
+  font-size: 32rpx;
+  color: #ffffff;
+  letter-spacing: 0;
+  margin-left: 46rpx;
+}
+.item-appointment {
+  background: #01af66;
+  margin-left: 20rpx;
+}
+.toast-box {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toast-content {
+  width: 240rpx;
+  height: 240rpx;
+  opacity: 0.75;
+  background: #3a3a3a;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.toast-content image {
+  width: 72rpx;
+  height: 72rpx;
+}
+.toast-content text {
+  font-size: 28rpx;
+  color: #ffffff;
+  letter-spacing: 0.58rpx;
+  text-align: center;
+  line-height: 36rpx;
+  margin-top: 16rpx;
+}
+.tag {
+  margin-right: 10rpx;
+}
+.map{
+  width: 100%;
+  height:350rpx;
+  margin-top:40rpx;
+}
+.map image{
+  width: 100%;
+  height: 100%;
+}
+.connect-detail-row .type image{
+  width:36rpx;height:36rpx;margin-right:10px;
+  vertical-align: middle;
+}

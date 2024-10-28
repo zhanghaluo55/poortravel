@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>H+ 后台主题UI框架 - Bootstrap Table</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="/static/assert/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/static/assert/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="/static/assert/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="/static/assert/css/animate.css" rel="stylesheet">
+    <link href="/static/assert/css/style.css?v=4.1.0" rel="stylesheet">
+
+
+    <script th:src="@{/webjars/jquery/3.3.1/jquery.min.js}"></script>
+
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox float-e-margins">
+
+        <div class="col-sm-12">
+            <!-- Example Pagination -->
+            <div class="example-wrap">
+                <div class="form-inline row">
+                    <div class="col-sm-3 col-md-offset-5 input-group">
+                        <input type="text" placeholder="输入搜索内容" id="search_user_input" name="search"
+                               class="form-control input-lg">
+                        <div class="input-group-btn">
+                            <button onclick="searchuser()" class="btn btn-lg btn-primary" type="submit">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>搜索
+                            </button>
+                        </div>
+                    </div>
+                    <script>
+                        function searchuser() {
+                            window.location.href = "/" + $("#search_user_input").val();
+                        }
+                    </script>
+                    <a data-toggle="modal" class="btn btn-primary" href="#modal-form">添加用户</a>
+                    <button type="button" class="btn btn-primary">删除用户</button>
+                    <h4 class="example-title">用户列表</h4>
+                    <div class="example">
+                    </div>
+                    <table id="exampleTablePagination" data-toggle="table" data-url="/js/demo/bootstrap_table_test.json"
+                           data-query-params="queryParams" data-mobile-responsive="true" data-height="550"
+                           data-pagination="true" data-icon-size="outline" data-search="false">
+                        <thead>
+                        <tr>
+                            <th data-field="state" data-checkbox="true"></th>
+                            <th>序号</th>
+                            <th>封面</th>
+                            <th>标题</th>
+                            <th>内容</th>
+                            <th>作者</th>
+                            <th>状态</th>
+                            <th>点赞数</th>
+                            <th>收藏数</th>
+                            <th>分享数</th>
+                            <th>评论数</th>
+                            <th>上传日期</th>
+                            <th>更新日期</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="user:${users}">
+                            <td></td>
+                            <td th:text="${user.id}"></td>
+                            <td th:text="${user.username}"></td>
+                            <td th:text="${user.password}"></td>
+                            <td th:text="${user.mobile}"></td>
+                            <td th:text="${user.email}"></td>
+                            <td th:text="${user.usertype}"></td>
+                            <td>[[${user.iconpath}]]</td>
+                            <!--日期格式化-->
+                            <!--<td th:text="${#dates.format(xx,'yyyy-MM-dd')}"></td>-->
+                            <td>
+                                <a data-toggle="modal" href="#modal-form2"
+                                   th:onclick="'javascript:toEdit('+${user.id}+');'">编辑</a>&nbsp;&nbsp;
+                                <a th:onclick="'javascript:delete_user('+${user.id}+');'" id="delete_btn">删除</a>
+                                <form method="post" id="deleteUser">
+                                    <input type="hidden" name="_method" value="delete"/>
+                                </form>
+                                <script>
+                                    function delete_user(id) {
+
+                                        var a = $("#delete_btn").attr("delete_uri");
+
+                                        $("#deleteUser").attr("action", "/user/" + id).submit();
+                                        return false;
+                                    }
+
+                                </script>
+                            </td>
+                        </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+            <!-- End Example Pagination -->
+        </div>
+    </div>
+    <!-- End Panel Other -->
+</div>
+
+
+<!--添加模态框-->
+<div id="modal-form" class="modal fade" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h3 class="m-t-none m-b">添加用户</h3>
+
+                        <p>请输入用户信息(⊙o⊙)</p>
+
+                        <form role="form" th:action="@{/user}" method="post">
+                            <div class="form-group">
+                                <label>用户名：</label>
+                                <input name="username" type="text" placeholder="请输入用户名" class="form-control" val="">
+                            </div>
+                            <div class="form-group">
+                                <label>密码：</label>
+                                <input name="password" type="password" placeholder="请输入密码" class="form-control" val="">
+                            </div>
+                            <div class="form-group">
+                                <label>确认密码：</label>
+                                <input type="password" placeholder="请再次输入密码" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>手机号码：</label>
+                                <input name="mobile" type="text" placeholder="请输入手机号码" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>电子邮箱：</label>
+                                <input name="email" type="email" placeholder="请输入电子邮箱" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>用户类型:</label>
+                                <div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" checked="" value="管理员" id="optionsRadios1"
+                                                   name="usertype">管理员</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" value="普通用户" id="optionsRadios2"
+                                                   name="usertype">普通用户</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit">
+                                    <strong>保存</strong>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--修改模态框-->
+<div id="modal-form2" class="modal fade" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h3 class="m-t-none m-b">编辑用户</h3>
+
+                        <p>请修改用户信息(⊙o⊙)</p>
+
+                        <form role="form" th:action="@{/user}" method="post">
+                            <input type="hidden" name="_method" value="put"/>
+                            <!-- <input type="hidden" name="id" th:value="${user.id}">-->
+                            <div class="form-group">
+                                <label>序号：</label>
+                                <input id="id_update_input" readonly="readonly" name="id" type="text"
+                                       class="form-control" val="">
+                            </div>
+                            <div class="form-group">
+                                <label>用户名：</label>
+                                <input id="username_update_input" name="username" type="text" class="form-control"
+                                       val="">
+                            </div>
+                            <div class="form-group">
+                                <label>密码：</label>
+                                <input name="password" type="password" class="form-control" val="">
+                            </div>
+                            <div class="form-group">
+                                <label>确认密码：</label>
+                                <input type="password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>手机号码：</label>
+                                <input id="mobile_update_input" name="mobile" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>电子邮箱：</label>
+                                <input id="email_update_input" name="email" type="email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>用户类型:</label>
+                                <div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" checked="" value="管理员" id="usertype_update_op1"
+                                                   name="usertype">管理员</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" value="普通用户" id="usertype_update_op2" name="usertype">普通用户</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button id="edit_btn" class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit">
+                                    <strong>完成</strong>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function toEdit(id) {
+        $.ajax({
+            url: "/Recipe/user/" + id,
+            type: "GET",
+            success: function (result) {
+                var user = result.user;
+
+                $("#id_update_input").val(id);
+                $("#username_update_input").val(user.username);
+                $("#mobile_update_input").val(user.mobile);
+                $("#email_update_input").val(user.email);
+                var op1 = $("#usertype_update_op1");
+                var op2 = $("#usertype_update_op2");
+                if (op1.val().equals(user.usertype)) {
+                    op1.attr("checked", true);
+                } else if (op2.val().equals(user.usertype)) {
+                    op2.attr("checked", true);
+                }
+            }
+        })
+    }
+
+</script>
+<!-- 全局js -->
+<script src="/Recipe/static/assert/js/jquery.min.js?v=2.1.4"></script>
+<script src="/Recipe/static/assert/js/bootstrap.min.js?v=3.3.6"></script>
+
+<!-- 自定义js -->
+<script src="/Recipe/static/assert/js/content.js?v=1.0.0"></script>
+
+
+<!-- Bootstrap table -->
+<script src="/Recipe/static/assert/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="/Recipe/static/assert/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="/Recipe/static/assert/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+<!-- iCheck -->
+<script src="/Recipe/static/assert/js/plugins/iCheck/icheck.min.js"></script>
+
+<!-- Peity -->
+<script src="/Recipe/static/assert/js/demo/bootstrap-table-demo.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+<!--统计代码，可删除-->
+
+</body>
+
+</html>

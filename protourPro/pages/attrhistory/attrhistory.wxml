@@ -1,0 +1,20 @@
+<!--pages/postlist/postlist.wxml-->
+
+
+<view class='news'>
+  <text>你的浏览足迹</text>
+  <view wx:for='{{attractions}}' wx:key='list' wx:for-item="item">
+    <view class='news-item' bindtap="toDetails" data-src="{{item.id}}">
+      <view class='news-item-aside'>
+        <image lazy-load='true' mode='aspectFill' class='news-item-pic' alt="暂无预览图" src='{{item.viewImage}}'></image>
+      </view>
+      <view class='news-item-main'>
+        <view class='news-item-title'>{{item.title}}</view>
+        <view class='news-item-time'>{{item.address}}</view>
+        <view class='news-item-src'>{{item.route}}</view>
+        <view class='news-item-category'></view>
+      </view>
+    </view>
+  </view>
+</view>
+ 

@@ -1,0 +1,195 @@
+/**app.wxss**/
+@import 'components/wux.wxss';
+@import 'assert/style/iconfont.wxss';
+
+
+.bg-fff {
+  background: #f60 !important;
+}
+
+.bg-a1a {
+  background: #a1a1a1 !important;
+}
+
+.bg-f60 {
+  background: #f60 !important;
+}
+
+.cl-f60 {
+  color: #f60 !important;
+}
+
+.cl-333 {
+  color: #333 !important;
+}
+
+.cl-666 {
+  color: #666 !important;
+}
+
+.cl-999 {
+  color: #999 !important;
+}
+
+.cl-c1 {
+  color: #c1c1c1 !important;
+}
+
+.cl-0c0 {
+  color: #00CC00 !important;
+}
+
+.cl-0c8 {
+  color: #00c800 !important;
+}
+
+.fz24 {
+  font-size: 24rpx !important;
+}
+
+.fz26 {
+  font-size: 26rpx !important;
+}
+
+.fz28 {
+  font-size: 28rpx !important;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.flex-column-main {
+  flex: 1;
+  overflow: auto;
+  --webkit-overflow-scrolling: touch;
+}
+
+.bottom-btn {
+  width: 100%;
+  line-height: 100rpx;
+  color: #fff;
+  background: #999;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-stroke-width: 0.2px;
+}
+
+.icon-zhifubao {
+  color: #00a0e9;
+}
+
+.icon-huabei {
+  color: #1d8cee;
+}
+
+.icon-weixinzhifu {
+  color: #00c800;
+}
+
+.icon-baidu {
+  color: #ec1c24;
+}
+
+.weui-navbar {
+  display: flex;
+  border-bottom: 1rpx solid #666;
+}
+
+.weui-navbar__item {
+  position: relative;
+  flex: 1;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.weui-navbar__item::before {
+  content: "";
+  position: absolute;
+  top: 28rpx;
+  right: 0rpx;
+  bottom: 28rpx;
+  width: 2rpx;
+  background: #666;
+}
+.weui-navbar__item:last-of-type::before {
+  display: none;
+}
+
+.weui-navbar__item.weui-bar__item_on {
+  /* color: #41c7db; */
+}
+
+.weui-bar__item_on::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1rpx;
+  height: 6rpx;
+  background-color: #41c7db;
+}
+
+.weui-navbar__title {
+  display: inline-block;
+  font-size: 14px;
+  max-width: 8em;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.weui-navbar__badge {
+  position: absolute;
+  right: 50px;
+  top: 6px;
+  background: #f60;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 12px;
+  padding: 0 10rpx;
+}
+
+.weui-tab {
+  position: relative;
+  height: 100%;
+}
+
+.weui-tab__panel {
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 50px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.ajc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

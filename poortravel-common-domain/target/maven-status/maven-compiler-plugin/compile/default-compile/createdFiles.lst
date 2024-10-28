@@ -1,0 +1,17 @@
+com\hongpro\poortravel\common\domain\Tag.class
+com\hongpro\poortravel\common\domain\UserAttrcollect.class
+com\hongpro\poortravel\common\domain\PostTag.class
+com\hongpro\poortravel\common\domain\User.class
+com\hongpro\poortravel\common\domain\PostFiles.class
+com\hongpro\poortravel\common\domain\Province.class
+com\hongpro\poortravel\common\domain\Attraction.class
+com\hongpro\poortravel\common\domain\News.class
+com\hongpro\poortravel\common\domain\PostCommentReply.class
+com\hongpro\poortravel\common\domain\Post.class
+com\hongpro\poortravel\common\domain\AttractionProvince.class
+com\hongpro\poortravel\common\domain\Files.class
+com\hongpro\poortravel\common\domain\PostComment.class
+com\hongpro\poortravel\common\domain\UserPostcollect.class
+com\hongpro\poortravel\common\domain\AttractionFiles.class
+com\hongpro\poortravel\common\domain\UserLogs.class
+com\hongpro\poortravel\common\domain\AttractionTag.class

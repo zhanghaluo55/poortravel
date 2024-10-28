@@ -1,0 +1,69 @@
+<scroll-view scroll-y="true" class="contain_detail_cnt" style="height:{{winHeight - 40}}px;">
+
+
+	<!-- 标题 -->
+	<view class="box-title">
+		<text class="title">全国扶贫办主任电视电话会议强调
+坚定必胜信心 坚决完成脱贫攻坚任务</text>
+	</view>
+
+	<!-- 内容 -->
+	<view class="content" scroll-y="true">
+		<block>
+		<!-- <image class="scrollLoading" src="../../assert/image/gannan.jpeg" mode="aspectFill"/> -->
+			<view class="contView" >
+      <text space="ensp" >   2月24日，国务院扶贫办召开全国扶贫办主任电视电话会议。国务院扶贫办党组书记、主任刘永富在讲话中要求，全国扶贫系统要深入学习贯彻习近平总书记在统筹推进新冠肺炎疫情防控和经济社会发展工作部署会议上的重要讲话精神，认真落实党中央、国务院决策部署和国务院扶贫开发领导小组工作安排，充分认识打赢脱贫攻坚战的重要性艰巨性复杂性，坚定必胜信心，采取有效措施，狠抓工作落实，坚决完成脱贫攻坚任务。
+   			</text>
+  </view>
+         <image class="scrollLoading" src="http://111.230.171.37:8888/group1/M00/00/01/rBAADl6HXfSAOCkkAALpSKeA_sQ591.jpg" mode="aspectFill"/>
+   <view class="contView" >
+      <text space="ensp">
+    刘永富指出，脱贫攻坚全面收官面临的任务十分艰巨，还有不少硬仗要打。突如其来的新冠肺炎疫情，又给脱贫攻坚带来了新的困难和挑战。应对这些困难和挑战，完成脱贫攻坚任务，必须付出更加艰辛的努力。我们一定要坚定信心和决心，在以习近平同志为核心的党中央的坚强领导下，再加把劲，狠抓落实，就一定能够全面完成今年的脱贫攻坚任务。
+</text>
+</view>
+	<image class="scrollLoading" src="	http://111.230.171.37:8888/group1/M00/00/01/rBAADl6HXfyALdc2AAEoyrWWX8c438.jpg" mode="aspectFill"/>
+    <view class="contView" >
+      <text space="ensp">
+   刘永富要求，要采取切实举措，努力把疫情对脱贫攻坚的影响降到最低。要全面准确分析形势，结合疫情和脱贫攻坚形势，研究提出针对性的举措，一抓到底，抓出成效。要抓好已有工作部署的落实，大力组织贫困人口外出务工，积极组织贫困人口发展生产，开展消费扶贫专项行动，优化调整财政专项扶贫资金的使用管理，规范光伏扶贫，东西部扶贫协作要聚焦劳务协作和消费扶贫。要因地制宜探索创新，结合实际确定各自的工作重点，分类施策，把工作做出特色。要高度重视舆论宣传工作，不断夯实脱贫攻坚舆论宣传的基础，积极主动做好舆论引导工作。
+
+  刘永富强调，扶贫部门是脱贫攻坚专责部门，要进一步增强责任感、使命感和紧迫感，绷紧弦加把劲，以做好脱贫攻坚的实际行动，践行增强“四个意识”、坚定“四个自信”、做到“两个维护”的根本要求。要转变工作方式，克服形式主义、官僚主义，建立疫情影响分析应对机制，强化督导落实。要关心基层扶贫干部，做好防护安全保障，加强心理疏导，及时解决工作和生活中的困难，加强典型宣传和表彰，让基层扶贫干部心无旁骛投入到疫情防控和脱贫攻坚工作中去。
+</text>
+</view>
+  	<!-- <image class="scrollLoading" src="../../assert/image/gannan4.jpeg" mode="aspectFill"/> -->
+		</block>
+	</view>
+
+	<!-- 评论 -->
+	<view class="content-comments">
+		<text class="comments-title">最新评论</text>
+		<view class="comments-box">
+			<view class="comments-list">
+				<view class="comments-avatar"><image class="comments-avatar-img" src="http://111.230.171.37:8888/group1/M00/00/00/rBAADl5439iACufbAAB_5ku9yEU708.jpg"/></view>
+				<view class="comments-main">
+					<view class="comments-author">
+						<view class="comments-zan">284</view>
+						<text>短腿爱西瓜(广州)</text>
+					</view>
+					<view class="comments-content">你好，我想问一下，你们中间从箱根到镰仓再回东京，行李箱是怎么办呀？</view>
+					<view class="comments-data">2019-10-24 17:35</view>
+				</view>
+			</view>
+		</view>
+		<!-- 没有评论 -->
+		<view class="not-comments"> 暂时还没有评论喔! </view>
+	</view>
+
+</scroll-view>
+
+<!-- 评论 点赞 分享  -->
+<view class="extra">
+	<view class="extra-share">
+		<!-- <image src="../../pages/images/share.png" class="extra-share-img" bindtap="showShare"/>
+		<image src="../../pages/images/comments.png" class="extra-share-img"/>
+		<image src="../../pages/images/zan.png" class="extra-share-img"/> -->
+		<view class="extra-share-img"><icon class="iconfont icon-share_light"></icon></view>
+		<view class="extra-share-img"><icon class="iconfont icon-icon_likegood"></icon></view>
+		<view class="extra-share-img"><button><icon class="iconfont icon-loop"></icon></button></view>
+	</view>
+	<input class="extra-input" type="text" maxlength="255" placeholder="你有什么看法?" placeholder-class="extra-placeholder" />
+</view>

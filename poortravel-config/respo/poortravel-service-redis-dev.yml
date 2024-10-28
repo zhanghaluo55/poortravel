@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: poortravel-service-redis
+  boot:
+    admin:
+      client:
+        url: http://localhost:8084
+        instance:
+          service-url: http://localhost:8502
+          name: poortravel-service-redis
+  redis:
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          max-wait: -1ms
+          min-idle: 0
+      sentinel:
+        master: mymaster
+        nodes: 111.230.171.37:26379, 111.230.171.37:26380, 111.230.171.37:26381
+
+server:
+  port: 8502
+

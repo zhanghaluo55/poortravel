@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hongpro.poortravel.service.sso.mapper.UserExtentMapper">
+    <resultMap id="BaseResultMap" type="com.hongpro.poortravel.common.domain.User">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="airphone" jdbcType="VARCHAR" property="airphone"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="gender" jdbcType="INTEGER" property="gender"/>
+        <result column="nickname" jdbcType="VARCHAR" property="nickname"/>
+        <result column="reg_date" jdbcType="TIMESTAMP" property="regDate"/>
+        <result column="head_image" jdbcType="VARCHAR" property="headImage"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="usertype" jdbcType="INTEGER" property="usertype"/>
+    </resultMap>
+</mapper>

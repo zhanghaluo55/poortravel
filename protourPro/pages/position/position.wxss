@@ -1,0 +1,89 @@
+/* pages/position/position.wxss */
+
+Page {
+  background: #f0f0f0;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.search-wrapper {
+  background: #fff;
+  padding: 12rpx 18rpx;
+  margin-bottom: 28rpx;
+}
+
+.search {
+  height: 56rpx;
+  background: #f2f2f2;
+  position: relative;
+  border-radius: 4rpx;
+}
+
+.search icon {
+  position: absolute;
+  left: 14rpx;
+  top: 13rpx;
+}
+
+.search input {
+  padding-left: 60rpx;
+  font-size: 24rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+}
+
+.now {
+  background: #fff;
+  margin-bottom: 28rpx;
+}
+
+.now-line {
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1rpx solid #ddd;
+  padding: 0 40rpx;
+  display: flex;
+}
+
+.now-line:last-of-type {
+  border-bottom: none;
+}
+
+.now-text {
+  flex: auto;
+  color: #c90;
+}
+
+.now-get {
+  color: #c90;
+}
+.now-get icon{
+  vertical-align: 0rpx;
+}
+
+.my-address {
+  background: #fff;
+  height: 90rpx;
+  line-height: 90rpx;
+  padding: 0 40rpx;
+  display: flex;
+}
+
+.address-text {
+  flex: auto;
+}
+
+.address-edit {
+  color: #c90;
+}
+.address-edit icon{
+  vertical-align: 0rpx;
+}
+.i-tags{
+    margin:50px 20px 0px 0px;
+}
+.section{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start
+}

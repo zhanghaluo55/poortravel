@@ -1,0 +1,4 @@
+/* pages/component/search-bar.wxss */
+.search{height: 56rpx;background: #fff; border-radius: 28rpx; border: 1rpx solid #666;position: relative;}
+.search icon{position: absolute;left: 14rpx;top: 13rpx;}
+.search input{padding-left: 60rpx;font-size: 24rpx;height: 56rpx; line-height: 56rpx;}

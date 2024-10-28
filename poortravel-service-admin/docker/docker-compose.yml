@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  poortravel-service-admin:
+    restart: always
+    image: 47.101.152.189:5000/poortravel-service-admin
+    container_name: poortravel-service-admin
+    ports:
+      - 8501:8501
+    networks:
+      - service_admin_network
+networks:
+  service_admin_network:

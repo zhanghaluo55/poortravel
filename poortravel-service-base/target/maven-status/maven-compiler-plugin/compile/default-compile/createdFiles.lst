@@ -1,0 +1,11 @@
+com\hongpro\poortravel\service\base\mapper\FilesExtentMapper.class
+com\hongpro\poortravel\service\base\ServiceBaseApplication.class
+com\hongpro\poortravel\service\base\controller\FilesController.class
+com\hongpro\poortravel\service\base\service\TagServiceImpl.class
+com\hongpro\poortravel\service\base\service\FilesService.class
+com\hongpro\poortravel\service\base\controller\TagController.class
+com\hongpro\poortravel\service\base\mapper\NewsExtentMapper.class
+com\hongpro\poortravel\service\base\mapper\ProvinceExtentMapper.class
+com\hongpro\poortravel\service\base\service\FilesServiceImpl.class
+com\hongpro\poortravel\service\base\mapper\TagExtentMapper.class
+com\hongpro\poortravel\service\base\service\TagService.class

@@ -1,0 +1,51 @@
+<!--pages/stategy/stategy.wxml-->
+<view class="header">
+   <view class='title'>
+      <text style='color:#ddd;font-size:20rpx;line-height: 20px;'>旅游·目的地</text>
+      <text class='heat'>85335人正在你这里游玩</text>
+   </view>
+   
+   
+  <navigator url="../position/position" class="address">{{province}}
+      <icon class="iconfont icon-down"></icon>
+      
+  </navigator>
+</view>
+
+<view style='padding:8px 20px;'>
+    <i-tag  class="i-tags" name="单个标签"  color="yellow">
+        景点
+    </i-tag>
+        <!-- <i-tag  class="i-tags" name="单个标签"  color="yellow">
+        美食
+    </i-tag>
+        <i-tag  class="i-tags" name="单个标签"  color="yellow">
+        购物
+    </i-tag> -->
+
+</view>
+<view class="divLine"></view>
+<view class="stategy-list">
+<view wx:for='{{attractions.data}}' wx:key='list' wx:for-item="item">
+<view class="stategy-list-item">
+  
+   <!-- <navigator url='../details/details'></navigator> -->
+   <view bindtap="toDetails" data-src="{{item.id}}">
+      <!-- <image class="photo" src="../../assert/image/dinghushan.jpg"></image>    -->
+      <image class="photo" src="{{item.viewImage}}"></image>
+      <text class="site">{{item.title}}</text>
+   </view>
+
+    <view style='display:flex;flex-direction:colum;'>    
+    <view wx:for='{{item.attractionTags}}' wx:key='list' wx:for-item="item2">
+      <i-tag class="i-tags2" name="标签一"  color="red" type="border" size='10px' style='font-size:1rpx'>
+        {{item2.label}}
+      </i-tag>
+    </view>
+  
+    </view>
+
+    </view>
+  </view>
+   
+</view>

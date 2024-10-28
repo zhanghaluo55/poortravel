@@ -1,0 +1,59 @@
+<!--pages/postlist/postlist.wxml-->
+
+<view class='news'>
+  <view wx:for='{{posts.data}}' wx:key='list' wx:for-item="item">
+    <view class='news-item' bindtap="toDetails" data-src="{{item.id}}">
+      <view class='news-item-aside'>
+        <image lazy-load='true' mode='aspectFill' class='news-item-pic' alt="暂无预览图" src='{{item.postImage}}'></image>
+      </view>
+      <view class='news-item-main'>
+        <view class='news-item-title'>{{item.title}}</view>
+        <view class='news-item-time'>{{item.postDate}}</view>
+        <view class='news-item-src'>{{item.province}}</view>
+        <view class='news-item-category'></view>
+      </view>
+    </view>
+  </view>
+</view>
+ <!-- <view class='news'>
+    <navigator url='../news/news'>
+    <view class='news-item' >
+      <view class='news-item-aside'>
+        <image lazy-load='true' mode='aspectFill' class='news-item-pic' alt="暂无预览图" src='/assert/image/fupinxinwen.jpg'></image>
+      </view>
+      <view class='news-item-main'>
+        <view class='news-item-title'>全国扶贫办主任电视电话会议强调
+坚定必胜信心 坚决完成脱贫攻坚任务</view>
+        <view class='news-item-time'>2020-02-26</view>
+        <view class='news-item-src'>国务院扶贫办</view>
+        <view class='news-item-category'></view>
+      </view>
+    </view>
+    </navigator>
+     <navigator url='../news/news'>
+    <view class='news-item' >
+      <view class='news-item-aside'>
+        <image lazy-load='true' mode='aspectFill' class='news-item-pic' alt="暂无预览图" src='/assert/image/fupin3.jpg'></image>
+      </view>
+      <view class='news-item-main'>
+        <view class='news-item-title'>国新办举行决战决胜脱贫攻坚新闻发布会</view>
+        <view class='news-item-time'>2020-03-12</view>
+        <view class='news-item-src'>国务院新闻办公室</view>
+        <view class='news-item-category'></view>
+      </view>
+    </view>
+    </navigator>
+     <navigator url='../news/news'>
+    <view class='news-item' >
+      <view class='news-item-aside'>
+        <image lazy-load='true' mode='aspectFill' class='news-item-pic' alt="暂无预览图" src='/assert/image/fupin4.jpg'></image>
+      </view>
+      <view class='news-item-main'>
+        <view class='news-item-title'>延安脱贫了</view>
+        <view class='news-item-time'>2019-07-09</view>
+        <view class='news-item-src'>王尚武</view>
+        <view class='news-item-category'></view>
+      </view>
+    </view>
+    </navigator>
+  </view> -->

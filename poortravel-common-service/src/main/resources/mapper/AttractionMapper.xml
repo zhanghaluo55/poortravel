@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hongpro.poortravel.common.mapper.AttractionMapper">
+  <resultMap id="BaseResultMap" type="com.hongpro.poortravel.common.domain.Attraction">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="route" jdbcType="VARCHAR" property="route" />
+    <result column="traffic" jdbcType="VARCHAR" property="traffic" />
+    <result column="ticket" jdbcType="VARCHAR" property="ticket" />
+    <result column="operat_hours" jdbcType="VARCHAR" property="operatHours" />
+    <result column="contact_phone" jdbcType="VARCHAR" property="contactPhone" />
+    <result column="view_image" jdbcType="VARCHAR" property="viewImage" />
+    <result column="view_video" jdbcType="VARCHAR" property="viewVideo" />
+    <result column="likes" jdbcType="INTEGER" property="likes" />
+    <result column="grade" jdbcType="INTEGER" property="grade" />
+    <result column="collect" jdbcType="INTEGER" property="collect" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="latitude" jdbcType="VARCHAR" property="latitude" />
+    <result column="longitude" jdbcType="VARCHAR" property="longitude" />
+  </resultMap>
+</mapper>

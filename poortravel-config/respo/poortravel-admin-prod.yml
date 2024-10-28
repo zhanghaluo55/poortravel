@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: poortravel-admin
+  zipkin:
+    base-url: http://111.230.171.37:9411
+
+server:
+  port: 8084
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://111.230.171.37:8761/eureka/
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info

@@ -1,0 +1,89 @@
+<!--pages/user/user.wxml-->
+<!--pages/study/study.wxml-->
+<view class="header">
+  <view wx:if="{{user!=null}}">
+    <view bindtap="insertImage" data-id="{{user.id}}"><image  class="avatar" src="{{user.headImage}}"></image></view>
+    <view class="user-info">
+      <view class="name">{{user.nickname}}</view>
+    </view>
+    <navigator url='../login/login'>
+      <view class="member" bindtap="toRegister">
+        <!-- <icon class="iconfont icon-gerenxinxi2"></icon> -->
+        注销>
+      </view>
+    </navigator>
+  </view>
+  <view wx:else>
+    <navigator url='../login/login'>
+    <button>登录/注册</button>
+    </navigator>
+  </view>
+</view>
+<view class="top-list">
+  <navigator url='../userlist/userlist' class="item br">
+    <icon class="iconfont icon-app_icons--"></icon>
+    <text>个人信息</text>
+  </navigator>
+  <navigator url='../pwdedit/pwdedit' class="item br">
+    <icon class="iconfont icon--shezhi"></icon>
+    <text>修改密码</text>
+  </navigator>
+  <navigator url='../postedit/postedit' class="item">
+    <icon class="iconfont icon-danchuangtianjiachengshi"></icon>
+    <text>发布游记</text>
+  </navigator>
+</view>
+<view class="separator"></view>
+<view class="type-list bb">
+  <view class="title">攻略</view>
+  <view class="con">
+    <navigator class="item">
+      <icon class="iconfont icon-jingdian5"></icon>
+      <text>成就地图</text>
+    </navigator>
+    <navigator  url='../attrcollect/attrcollect' class="item">
+      <icon class="iconfont icon-wodeshoucang"></icon>
+      <text>攻略收藏</text>
+    </navigator>
+    <navigator url='../attrhistory/attrhistory' class="item">
+      <icon  class="iconfont icon-gonglve"></icon>
+      <text>我的足迹</text>
+    </navigator>
+  </view>
+</view>
+<view class="type-list bb">
+  <view class="title">旅游记录</view>
+  <view class="con">
+    <navigator url='../postlist/postlist' class="item">
+      <icon class="iconfont icon-icon_invite"></icon>
+      <text>我的游记</text>
+    </navigator>
+    <navigator url='../postcollect/postcollect' class="item">
+      <icon class="iconfont icon-wodeshoucang"></icon>
+      <text>游记收藏</text>
+    </navigator>
+    <navigator url='../posthistory/posthistory' class="item">
+      <icon class="iconfont icon-agreement"></icon>
+      <text>浏览记录</text>
+    </navigator>
+
+  </view>
+</view>
+
+<!-- <view class="type-list">
+  <view class="title">成就</view>
+  <view class="con">
+    <navigator class="item">
+      <icon class="iconfont icon-icon_medal"></icon>
+      <text>已解锁成就</text>
+    </navigator>
+    <navigator class="item">
+      <icon class="iconfont icon-remenjingdian"></icon>
+      <text>探索宝鉴</text>
+    </navigator>
+    <navigator class="item">
+      <icon class="iconfont icon-huangguan"></icon>
+      <text>成就地图</text>
+    </navigator>
+  </view>
+</view> -->

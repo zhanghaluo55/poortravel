@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  poortravel-service-upload:
+    restart: always
+    image: 47.101.152.189:5000/poortravel-service-upload
+    container_name: poortravel-service-upload
+    ports:
+      - 8505:8505
+    networks:
+      - service_upload_network
+networks:
+  service_upload_network:

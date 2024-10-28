@@ -1,0 +1,95 @@
+<view class="detail">
+  <view class="banner-box">
+        <swiper class="banner-box-swiper" bindchange="bannerSwiperChange">
+          <block>
+            <view wx:for='{{attraction.data.files}}' wx:key='list' wx:for-item="item">
+             <swiper-item>
+              <image src="{{item.path}}" class="banner-img"/>
+            </swiper-item>
+            </view>
+          </block>
+        </swiper>
+        <view class="banner-indicator-info">
+          <view class="banner-indicator-text">{{bannerCurrentIndex}}</view>
+          <view class="banner-indicator-text-small"> /3</view>
+        </view>
+      </view>
+ 
+  
+
+  <view class="house-text">
+    <view class="title">{{attraction.data.title}}</view>
+    <text class="house-text-content">
+         {{description}}
+    </text>
+  </view>
+  <view class="house-detail">
+    <view class="house-detail-row">
+      <view class="house-detail-item">
+        <view class="type">
+          门票:
+        </view>
+        <view>{{attraction.data.ticket}}</view>
+      </view>
+    </view>
+
+    <view class="house-detail-row">
+      <view class="house-detail-item">
+        <view class="type">
+          开放时间:
+        </view>
+        <view>{{attraction.data.operatHours}}</view>
+      </view>
+    </view>
+    <view class="house-detail-row">
+      <view class="house-detail-item">
+        <view class="type">
+          交通：
+        </view>
+        <view>{{attraction.data.traffic}}</view>
+      </view>
+    </view>
+    
+  </view>
+
+  <view class="connect-detail">
+      <view class="connect-detail-row">
+        <view class="type"><image src="../../assert/image/tel.png" ></image>咨询电话</view>
+        <view class="item-content" style='color:#3072F6;text-decoration:underline;'>{{attraction.data.contactPhone}}</view>
+      </view>
+      <view class="connect-detail-row">
+        <view class="type"><image src="../../assert/image/location.png" ></image>景点位置</view>
+        <view class="item-content">{{attraction.data.address}}</view>
+      </view>
+      <view class='map'>
+      <image src='../../assert/image/map.png'></image>
+      </view>
+    </view>
+
+  <view class="bottom-box">
+    <view class="bottom-item item-like">
+      <view wx:if='{{isCollect}}'>
+      <icon class="iconfont icon-shoucang1"  bindtap="dislike" data-src="{{attraction.data.id}}"></icon> 
+      </view>
+      <view wx:else>
+        <icon class="iconfont icon-wodeshoucang"  bindtap="like" data-src="{{attraction.data.id}}"></icon> 
+      </view>
+      <text>收藏</text>
+    </view>
+    <view class="bottom-item item-share">
+     <icon class="iconfont icon-share_light"></icon>
+      <text>分享</text>
+    </view>
+    <view class="bottom-item item-online-service">
+      电话咨询
+    </view>
+    <view class="bottom-item item-appointment" data-attr="{{attraction.data}}" bindtap="click">景点导航</view>
+  </view>
+  <view class="toast-box" wx:if="{{ isShowToast }}">
+    <view class="toast-content">
+      <icon class="iconfont icon--zhengque"></icon>
+      <text>收藏成功</text>
+    </view>
+  </view>
+</view>
+ 

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/poortravel-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-common-domain" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-common-domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-common-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-common-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-common-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-common-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-dependencies" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-dependencies/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-service-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-service-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-service-attraction" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-service-attraction/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-service-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-service-base/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-service-posts" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-service-posts/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-service-redis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-service-redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-service-sso" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-service-sso/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-service-upload" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-service-upload/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-web-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-web-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-web-bamui" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-web-bamui/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-zipkin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-zipkin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-zuul" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poortravel-zuul/src/main/java" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>H+ 后台主题UI框架 - Bootstrap Table</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="http://111.230.171.37:81/poortravel/assert/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="http://111.230.171.37:81/poortravel/assert/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="http://111.230.171.37:81/poortravel/assert/css/plugins/bootstrap-table/bootstrap-table.min.css"
+          rel="stylesheet">
+    <link href="http://111.230.171.37:81/poortravel/assert/css/animate.css" rel="stylesheet">
+    <link href="http://111.230.171.37:81/poortravel/assert/css/style.css?v=4.1.0" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://111.230.171.37:81/poortravel/assert/plugins/dropzone/dropzone.css"/>
+    <link rel="stylesheet" href="http://111.230.171.37:81/poortravel/assert/plugins/dropzone/min/basic.min.css"/>
+    <link rel="stylesheet"
+          href="http://111.230.171.37:81/poortravel/assert/plugins/wangEditor/release/wangEditor.min.css"/>
+
+    <style>
+
+        .file-list {
+            height: 125px;
+            display: none;
+            list-style-type: none;
+        }
+
+        .file-list img {
+            max-width: 70px;
+            vertical-align: middle;
+        }
+
+        .file-list .file-item {
+            margin-bottom: 10px;
+            float: left;
+            margin-left: 20px;
+        }
+
+        .file-list .file-item .file-del {
+            display: block;
+            margin-left: 20px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox float-e-margins">
+
+        <div class="col-sm-12">
+            <!-- Example Pagination -->
+            <div class="example-wrap">
+                <div class="form-inline row">
+
+                    <div class="col-sm-3 col-md-offset-5 input-group">
+                        <input type="text" placeholder="输入搜索内容" id="search_input"  name="search" class="form-control input-lg">
+                        <div class="input-group-btn">
+                            <button onclick="search()" class="btn btn-lg btn-primary" type="submit">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>搜索
+                            </button>
+                        </div>
+                    </div>
+                    <script>
+                        function search() {
+                            window.location.href="/v1/attractionfiles/search?key="+$("#search_input").val();
+                        }
+                    </script>
+                    <a data-toggle="modal" class="btn btn-primary" href="#modal-form">添加攻略文件绑定</a>
+                    <button type="button" class="btn btn-primary">删除攻略文件绑定</button>
+                    <h4 class="example-title">攻略绑定文件列表</h4>
+                    <div class="example">
+                    </div>
+                    <table id="exampleTablePagination" class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th data-field="state" data-checkbox="true"></th>
+                            <th>序号</th>
+                            <th>攻略ID</th>
+                            <th>文件ID</th>
+                            <th>文件类型</th>
+                            <th>编辑</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="attrfiles:${baseResult.data}">
+                            <td></td>
+                            <td th:text="${attrfiles.id}"></td>
+                            <td th:text="${attrfiles.aid}"></td>
+                            <td th:text="${attrfiles.fid}"></td>
+                            <td th:text="${attrfiles.filetype}"></td>
+                            <!-- <td>
+                                 <img style="width: 200px;height: 150px;" th:src="@{'/static/assert/proimage/'+${post.imagepath}+'.jpg'}"/>
+                             </td>
+                             <td th:text="${recipe.description}"></td>-->
+
+                            <td>
+                                <a data-toggle="modal" href="#modal-form2"
+                                   th:onclick="'javascript:toEdit('+${attrfiles.id}+');'">编辑</a>&nbsp;&nbsp;
+                                <a th:onclick="'javascript:delete_file('+${attrfiles.id}+');'" id="delete_btn">删除</a>
+                                <form method="post" id="deleteFile">
+                                    <input type="hidden" name="_method" value="delete"/>
+                                </form>
+                                <script>
+                                    function delete_file(id) {
+
+                                        var a = $("#delete_btn").attr("delete_uri");
+
+                                        $("#deleteFile").attr("action", "/v1/attractionfiles/" + id).submit();
+                                        return false;
+                                    }
+
+                                </script>
+                            </td>
+                        </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+            <!-- End Example Pagination -->
+        </div>
+    </div>
+    <!-- End Panel Other -->
+</div>
+
+
+<!--添加模态框-->
+<div id="modal-form" class="modal fade" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h3 class="m-t-none m-b">添加攻略文件绑定</h3>
+                        <p>请输入攻略文件绑定信息(⊙o⊙)</p>
+
+                        <form role="form" th:action="@{/v1/attractionfiles}" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label>攻略ID：</label>
+                                <input name="aid" type="text" placeholder="请输入攻略ID" class="form-control" val="">
+                            </div>
+                            <div class="form-group">
+                                <label>文件ID：</label>
+                                <input name="fid" type="text" placeholder="输入文件ID" class="form-control" val="">
+                            </div>
+                            <div class="form-group">
+                                <label>文件类型：</label>
+                                <input name="filetype" type="text" placeholder="输入文件类型" class="form-control" val="">
+                            </div>
+                            <div>
+                                <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit">
+                                    <strong>保存</strong>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Nestable List -->
+<script src="http://111.230.171.37:81/poortravel/assert/js/plugins/nestable/jquery.nestable.js"></script>
+<script>
+    $('#nestable').nestable({
+        group: 1
+    }).on('change', updateOutput);
+
+    // activate Nestable for list 2
+    $('#nestable2').nestable({
+        group: 1
+    }).on('change', updateOutput);
+
+    // output initial serialised data
+    updateOutput($('#nestable').data('output', $('#nestable-output')));
+    updateOutput($('#nestable2').data('output', $('#nestable2-output')));
+
+    $('#nestable-menu').on('click', function (e) {
+        var target = $(e.target),
+            action = target.data('action');
+        if (action === 'expand-all') {
+            $('.dd').nestable('expandAll');
+        }
+        if (action === 'collapse-all') {
+            $('.dd').nestable('collapseAll');
+        }
+    });
+</script>
+<!--修改模态框-->
+<div id="modal-form2" class="modal fade" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h3 class="m-t-none m-b">编辑攻略文件绑定</h3>
+
+                        <p>请修改攻略文件绑定信息(⊙o⊙)</p>
+
+                        <form id="editForm" role="form" th:action="@{/v1/attractionfiles}" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="_method" value="put"/>
+                            <!-- <input type="hidden" name="id" th:value="${user.id}">-->
+                            <div class="form-group">
+                                <label>序号：</label>
+                                <input id="id_update_input" readonly="readonly" name="id" type="text"
+                                       class="form-control" val="">
+                            </div>
+                            <div class="form-group">
+                                <label>攻略ID：</label>
+                                <input id="aid_update_input" name="aid" type="text" class="form-control" val="">
+                            </div>
+                            <div class="form-group">
+                                <label>文件ID：</label>
+                                <input id="fid_update_input" name="fid" type="text" class="form-control" val="">
+                            </div>
+                            <div class="form-group">
+                                <label>文件类型：</label>
+                                <input id="filetype_update_input" name="filetype" type="text" class="form-control" val="">
+                            </div>
+                            <div>
+                                <button id="edit_btn" class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit">
+                                    <strong>完成</strong>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function toEdit(id) {
+        $.ajax({
+            url: "/v1/attractionfiles/" + id,
+            type: "GET",
+            dataType:'json',
+            success: function (result) {
+                var attrfiles = result.data;
+
+                $("#id_update_input").val(id);
+                $("#aid_update_input").val(attrfiles.aid);
+                $("#fid_update_input").val(attrfiles.fid);
+                $("#filetype_update_input").val(attrfiles.filetype);
+                $("#editForm").attr("action", "/v1/attractionfiles/" + id);
+            }
+        })
+    }
+
+</script>
+<!-- 全局js -->
+<script src="http://111.230.171.37:81/poortravel/assert/js/jquery.min.js?v=2.1.4"></script>
+<script src="http://111.230.171.37:81/poortravel/assert/js/bootstrap.min.js?v=3.3.6"></script>
+
+<!-- 自定义js -->
+<script src="http://111.230.171.37:81/poortravel/assert/js/content.js?v=1.0.0"></script>
+<script src="http://111.230.171.37:81/poortravel/assert/layer/layer.js"></script>
+
+<script src="http://111.230.171.37:81/poortravel/assert/js/jquery-3.3.1.min.js"></script>
+<script src="http://111.230.171.37:81/poortravel/assert/plugins/dropzone/min/dropzone.min.js"></script>
+<script src="http://111.230.171.37:81/poortravel/assert/plugins/wangEditor/release/wangEditor.min.js"></script>
+
+<!-- Bootstrap table -->
+<script src="http://111.230.171.37:81/poortravel/assert/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="http://111.230.171.37:81/poortravel/assert/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="http://111.230.171.37:81/poortravel/assert/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+<!-- iCheck -->
+<script src="http://111.230.171.37:81/poortravel/assert/js/plugins/iCheck/icheck.min.js"></script>
+
+<!-- Peity -->
+<script src="http://111.230.171.37:81/poortravel/assert/js/demo/bootstrap-table-demo.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+<!--统计代码，可删除-->
+</body>
+
+</html>

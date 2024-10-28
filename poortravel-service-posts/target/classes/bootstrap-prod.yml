@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      uri: http://47.101.152.189:8889
+      name: poortravel-service-posts, poortravel-client-redis, poortravel-common-service
+      label: master
+      profile: prod

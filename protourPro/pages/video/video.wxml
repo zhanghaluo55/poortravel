@@ -1,0 +1,4 @@
+
+<view>
+<button bindtap="click">导航</button>
+</view>

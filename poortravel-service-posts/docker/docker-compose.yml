@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  poortravel-service-posts:
+    restart: always
+    image: 47.101.152.189:5000/poortravel-service-posts
+    container_name: poortravel-service-posts
+    ports:
+      - 8504:8504
+    networks:
+      - service_posts_network
+networks:
+  service_posts_network:

@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8889
+      name: poortravel-service-upload,poortravel-common-service
+      label: master
+      profile: dev

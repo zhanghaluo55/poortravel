@@ -1,0 +1,6 @@
+  <view class="cu-bar search bg-white">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="搜索房源、单间、合租......" confirm-type="search"></input>
+    </view>
+  </view>

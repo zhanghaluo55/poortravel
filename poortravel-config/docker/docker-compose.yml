@@ -1,0 +1,13 @@
+version: '3.1'
+services:
+  poortravel-config:
+    restart: always
+    image: 47.101.152.189:5000/poortravel-config
+    container_name: poortravel-config
+    ports:
+      - 8889:8889
+    networks:
+      - config_network
+
+networks:
+  config_network:

@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8889
+      name: poortravel-zipkin
+      label: master
+      profile: dev

@@ -1,0 +1,29 @@
+<!--pages/login/login.wxml-->
+<form bind:submit="formSubmit" bind:reset="formReset">
+<view class="content">
+	<view class="account">
+		<view class="title">帐号</view>
+		<view class="num"><input name="username" bindinput="accountInput" placeholder="用户名" placeholder-style="color:#999;" /></view>
+	</view>
+	<view class="hr"></view>
+	<view class="account">
+		<view class="title">密码</view>
+		<view class="num"><input name="password" bindinput="pwdBlur" placeholder="请输入密码" password="{{true}}" placeholder-style="color:#999;" /></view>
+		<view class="see">
+			<image src="../images/see.jpg" style="width:42px; height:30px;" />
+		</view>
+	</view>
+	<view class="hr"></view>
+	<button class="btn" form-type="submit" disabled="{{disabled}}" type="{{btnstate}}" >登录</button>
+	<view class="operate">
+		<!-- <view><navigator url="../mobile/mobile">快速注册</navigator></view> -->
+		<view><navigator url="../company/company">快速注册</navigator></view>
+		<view>找回密码</view>
+	</view>
+	<view class="login">
+		<view><image src="../images/wxlogin.png" /></view>
+		<view><image src="../images/qqlogin.png" /></view>
+		
+	</view>
+</view>
+</form>

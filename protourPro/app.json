@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/mobile/mobile",
+    "pages/company/company",
+    "pages/stategy/stategy",
+    "pages/video/video",
+    "pages/user/user",
+    "pages/userlist/userlist",
+    "pages/blogs/blogs",
+    "pages/image/image",
+    "pages/position/position",
+    "pages/details/details",
+    "pages/article/article",
+    "pages/postedit/postedit",
+    "pages/news/news",
+    "pages/pwdedit/pwdedit",
+    "pages/postlist/postlist"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3CB371",
+    "navigationBarTitleText": "扶贫旅游攻略",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#858585",
+    "selectedColor": "#3CB371",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "assert/image/diqiu.png",
+        "selectedIconPath": "assert/image/diqiu.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/stategy/stategy",
+        "iconPath": "assert/image/search.png",
+        "selectedIconPath": "assert/image/search.png",
+        "text": "攻略"
+      },
+      {
+        "pagePath": "pages/blogs/blogs",
+        "iconPath": "assert/image/study.png",
+        "selectedIconPath": "assert/image/study.png",
+        "text": "游记"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "assert/image/smile.png",
+        "selectedIconPath": "assert/image/smile.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

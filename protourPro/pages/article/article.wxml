@@ -1,0 +1,67 @@
+<scroll-view scroll-y="true" class="contain_detail_cnt" style="height:{{winHeight - 40}}px;">
+
+	<!-- 标题 -->
+	<view class="box-title">
+		<text class="title">{{post.data.title}}</text>
+	</view>
+ <view class="content" scroll-y="true">
+		<block>
+    <rich-text nodes="{{post.data.content}}">
+
+    </rich-text>
+		</block>
+	</view> 
+
+
+	<!-- 评论 -->
+	<view class="content-comments">
+		<text class="comments-title">最新评论</text>
+		<view wx:if="{{comments.data!=''}}">
+		<view class="comments-box">
+		<view wx:for='{{comments.data}}' wx:key='list' wx:for-item="item">
+			<view class="comments-list">
+				<view class="comments-avatar"><image class="comments-avatar-img" src="{{item.user.headImage}}"/></view>
+				<view class="comments-main">
+					<view class="comments-author">
+						<view class="comments-zan"></view>
+						<text>{{item.user.nickname}}</text>
+					</view>
+					<view class="comments-content">{{item.content}}</view>
+					<view class="comments-data"></view>
+				</view>
+			</view>
+		</view>
+		</view>
+		</view>
+		<!-- 没有评论 -->
+		<view wx:else>
+		<view class="not-comments"> 暂时还没有评论喔! </view>
+		</view>
+	</view>
+</scroll-view>
+
+<!-- 评论 点赞 分享  -->
+<view class="extra">
+	<view class="extra-share">
+		<!-- <image src="../../pages/images/share.png" class="extra-share-img" bindtap="showShare"/>
+		<image src="../../pages/images/comments.png" class="extra-share-img"/>
+		<image src="../../pages/images/zan.png" class="extra-share-img"/> -->
+			<view class="extra-share-img"><icon class="iconfont icon-share_light"></icon></view>
+		 <view wx:if='{{isCollect}}'>
+		<view class="extra-share-img"><icon class="iconfont icon-shoucang1" bindtap="dislike" data-src="{{post.data}}"></icon></view>
+		</view>
+		<view wx:else>
+			<view class="extra-share-img"><icon class="iconfont icon-shoucang" bindtap="like" data-src="{{post.data}}"></icon></view>
+		</view>
+		<view class="extra-share-img"><icon class="iconfont icon-loop" data-pid="{{post.data.id}}" bindtap="commentup"></icon></view>
+	</view>
+	<input bindinput="getInputValue" name='content' class="extra-input" type="text" maxlength="255" placeholder="你有什么看法?" placeholder-class="extra-placeholder" value="{{inputValue}}" />
+
+</view>
+
+
+
+<!-- 点击分享弹出层 -->
+<modal class="modal" hidden="{{modalHidden}}" no-cancel bindconfirm="modalChange">
+  <view> {{modalValue}} </view>
+</modal>
